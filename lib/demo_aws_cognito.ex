@@ -2,6 +2,7 @@ defmodule DemoAwsCognito do
   @moduledoc """
   Documentation for DemoAwsCognito.
   """
+
   alias AWS.Cognito.IdentityProvider
 
   @doc """
@@ -22,7 +23,8 @@ defmodule DemoAwsCognito do
       ]
     }
 
-    IdentityProvider.admin_create_user(client, input)
+    client
+    |> IdentityProvider.admin_create_user(input)
   end
 
   @doc """
@@ -80,7 +82,8 @@ defmodule DemoAwsCognito do
       AccessToken: access_token
     }
 
-    IdentityProvider.get_user(client, input)
+    client
+    |> IdentityProvider.get_user(input)
   end
 
   @doc """
@@ -108,7 +111,8 @@ defmodule DemoAwsCognito do
       AccessToken: access_token
     }
 
-    IdentityProvider.global_sign_out(client, input)
+    client
+    |> IdentityProvider.global_sign_out(input)
   end
 
   @doc """
@@ -122,7 +126,8 @@ defmodule DemoAwsCognito do
       Username: username
     }
 
-    IdentityProvider.admin_delete_user(client, input)
+    client
+    |> IdentityProvider.admin_delete_user(input)
   end
 
   defp get_session({:ok, %{"Session" => session}, _}), do: session
