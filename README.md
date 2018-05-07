@@ -2,7 +2,7 @@
 Amazon AWS Cognito + Elixir setup demo/starter kit
 
 ## Functions
-```
+```elixir
 # POST create a new user by username, email
 DemoAwsCognito.create_user(username, email)
 
@@ -28,8 +28,14 @@ DemoAwsCognito.delete(username)
 
 ## Setup
 ```elixir
-mix deps.get        # 1. get dependencies
-source config/.env  # 2. source environment variables before running 
+# 1. get dependencies
+mix deps.get
+
+# 2. create and edit environment file
+touch config/.env
+
+# 3. source environment variables before running 
+source config/.env
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
